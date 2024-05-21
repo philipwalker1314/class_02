@@ -20,71 +20,22 @@ Student.........:
 // Call external libraries
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese un número: ");
+        int numero = sc.nextInt();
 
+        if (numero / 2 == 0) {
+            System.out.println(numero + " es un número par.");
+        } else {
+            System.out.println(numero + " es un número impar.");
+        }
 
-        // Print separator line
-        System.out.println("========================================");
-
-        HashMap<String, Float> Hortalizas = new HashMap<>();
-        Hortalizas.put("Brocoli", 850.0f);
-        Hortalizas.put("Lechuga", 745.0f);
-        Hortalizas.put("Remolacha", 385.0f);
-        Hortalizas.put("Papa", 790.0f);
-        Hortalizas.put("Zanahoria", 695.0f);
-
-        Hortalizas.forEach((key, value) -> System.out.println("Imprimiendo...: " + key + " - " + value));
-
-        System.out.println("El valor de la Brocoli es: " + Hortalizas.get("Brocoli"));
-
-
-        System.out.println("========================================");
-
-        HashMap<String, Float> misCompras = new HashMap<>();
-        misCompras.put("Brocoli", 2.0f);
-        misCompras.put("Papa", 4.5f);
-        misCompras.put("Zanahoria", 3.25f);
-
-// Update the value of the key "Papa" and "Zanahoria"
-        Hortalizas.replace("Papa", 915.0f);
-        Hortalizas.replace("Zanahoria", 785.0f);
-
-
-        float total = 0.0f;
-        for (String key : misCompras.keySet()){
-            total += misCompras.get(key) * Hortalizas.get(key);
-        } // end for
-
-        System.out.println("El total de la compra es: " + total);
-
-        HashMap<String, Float> detalleCompra = new HashMap<>();
-        for (String key : misCompras.keySet()){
-            detalleCompra.put(key, misCompras.get(key) * Hortalizas.get(key));
-        } // end for
-
-        detalleCompra.forEach((key, value) -> System.out.println("Imprimiendo...: " + key + " - " + value));
-
-// Print separator line
-        System.out.println("========================================");
-
-        System.out.println();
-
-// Print with format
-        System.out.printf("%-15s | %8s \n", "Producto", "Precio");
-        System.out.println("----------------+---------");
-        detalleCompra.forEach((key, value) -> System.out.printf("%-15s | %8.2f \n", key, value));
-        System.out.println("----------------+---------");
-        System.out.printf("%-15s | %8.2f \n", "Total", total);
-
-
-
-
-
-
-
-
+        sc.close();
     }
 }
 
@@ -237,3 +188,55 @@ public class Main {
 
 
 
+//// Print separator line
+//        System.out.println("========================================");
+//
+//HashMap<String, Float> Hortalizas = new HashMap<>();
+//        Hortalizas.put("Brocoli", 850.0f);
+//        Hortalizas.put("Lechuga", 745.0f);
+//        Hortalizas.put("Remolacha", 385.0f);
+//        Hortalizas.put("Papa", 790.0f);
+//        Hortalizas.put("Zanahoria", 695.0f);
+//
+//        Hortalizas.forEach((key, value) -> System.out.println("Imprimiendo...: " + key + " - " + value));
+//
+//        System.out.println("El valor de la Brocoli es: " + Hortalizas.get("Brocoli"));
+//
+//
+//        System.out.println("========================================");
+//
+//HashMap<String, Float> misCompras = new HashMap<>();
+//        misCompras.put("Brocoli", 2.0f);
+//        misCompras.put("Papa", 4.5f);
+//        misCompras.put("Zanahoria", 3.25f);
+//
+//// Update the value of the key "Papa" and "Zanahoria"
+//        Hortalizas.replace("Papa", 915.0f);
+//        Hortalizas.replace("Zanahoria", 785.0f);
+//
+//
+//float total = 0.0f;
+//        for (String key : misCompras.keySet()){
+//total += misCompras.get(key) * Hortalizas.get(key);
+//        } // end for
+//
+//                System.out.println("El total de la compra es: " + total);
+//
+//HashMap<String, Float> detalleCompra = new HashMap<>();
+//        for (String key : misCompras.keySet()){
+//        detalleCompra.put(key, misCompras.get(key) * Hortalizas.get(key));
+//        } // end for
+//
+//        detalleCompra.forEach((key, value) -> System.out.println("Imprimiendo...: " + key + " - " + value));
+//
+//// Print separator line
+//        System.out.println("========================================");
+//
+//        System.out.println();
+//
+//// Print with format
+//        System.out.printf("%-15s | %8s \n", "Producto", "Precio");
+//        System.out.println("----------------+---------");
+//        detalleCompra.forEach((key, value) -> System.out.printf("%-15s | %8.2f \n", key, value));
+//        System.out.println("----------------+---------");
+//        System.out.printf("%-15s | %8.2f \n", "Total", total);
